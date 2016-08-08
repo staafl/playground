@@ -8,7 +8,7 @@
   (if (= n o)
     #{(apply str (repeat o rp))}
     (let [
-        open        (conj (map #(str-repeat % lp) (range 1 (inc (- n o)))) "")
+        open        (conj (map #(str-repeat % lp) (range 1 (inc (- n o)))) "") ; thought we didn't need "" here but 5 case misses ((()()))()
         closed      (conj (map #(str-repeat % rp) (range 1 (inc (- n o)))) "")
       ]
       (set (
